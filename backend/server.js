@@ -20,7 +20,7 @@ app.use('/api/rooms', roomRoutes);
 app.use('/api/availability', availabilityRoutes);
 
 // Database connection
-mongoose.connect('mongodb://127.0.0.1:27017/shss_db')
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ MongoDB Connected'))
     .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
