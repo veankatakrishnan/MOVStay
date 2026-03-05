@@ -14,10 +14,12 @@ app.use(express.json());
 const pgRoutes = require('./routes/pgRoutes');
 const roomRoutes = require('./routes/roomRoutes');
 const availabilityRoutes = require('./routes/availabilityRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 app.use('/api/pg', pgRoutes);
 app.use('/api/rooms', roomRoutes);
 app.use('/api/availability', availabilityRoutes);
+app.use('/api/auth', authRoutes);
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI)
