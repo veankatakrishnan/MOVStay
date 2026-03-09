@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="absolute top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,10 +19,10 @@ const Navbar = () => {
 
           {/* Navigation Buttons */}
           <div className="hidden sm:flex items-center space-x-4">
-            <button className="text-[#475569] hover:text-[#0D9488] font-bold px-4 py-2 transition-colors duration-200">
+            <button onClick={() => navigate('/login')} className="text-[#475569] hover:text-[#0D9488] font-bold px-4 py-2 transition-colors duration-200">
               Login
             </button>
-            <button className="bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold px-6 py-2 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-[1px]">
+            <button onClick={() => navigate('/login')} className="bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold px-6 py-2 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-[1px]">
               Register
             </button>
           </div>

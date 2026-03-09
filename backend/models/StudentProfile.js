@@ -10,17 +10,41 @@ const studentProfileSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
-  preferredCity: {
+  gender: {
+    type: String,
+    enum: ['Male', 'Female', 'Other'],
+  },
+  preferredLocation: {
     type: String,
     default: ''
   },
-  budgetRange: {
+  budget: {
     type: String,
     default: ''
   },
-  roommatePreferences: {
+  preferredRoomType: {
     type: String,
-    default: ''
+    enum: ['Single', 'Double', 'Triple', 'Dormitory', 'Any'],
+    default: 'Any'
+  },
+  foodPreference: {
+    type: String,
+    enum: ['veg', 'non-veg', 'any'],
+    default: 'any'
+  },
+  smokingPreference: {
+    type: Boolean,
+    default: false
+  },
+  sleepTime: {
+    type: String,
+    enum: ['early', 'late', 'flexible'],
+    default: 'flexible'
+  },
+  cleanlinessLevel: {
+    type: String,
+    enum: ['high', 'medium', 'low'],
+    default: 'medium'
   }
 }, {
   timestamps: true

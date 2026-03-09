@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Please provide a phone number'],
     unique: true
   },
+  profileImage: {
+    type: String,
+    default: ''
+  },
   password: {
     type: String,
     required: [true, 'Please provide a password'],
@@ -30,6 +34,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['student', 'owner', 'admin'],
     required: true
+  },
+  status: {
+    type: String,
+    enum: ['active', 'blocked', 'suspended'],
+    default: 'active'
   },
   createdAt: {
     type: Date,

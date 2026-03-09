@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        alert('Please login or register an account to search for accommodations.');
+        navigate('/login');
+    };
+
     return (
         <div className="relative min-h-screen w-full flex flex-col lg:flex-row bg-[#F8FAFC] overflow-hidden pt-20 lg:pt-0">
             
@@ -41,7 +49,7 @@ const Hero = () => {
                                 className="w-full bg-transparent border-none outline-none text-[#1E293B] placeholder-[#94A3B8] px-4 py-3 text-base sm:text-lg font-medium"
                             />
                         </div>
-                        <button className="w-full sm:w-auto flex-shrink-0 bg-[#0F172A] hover:bg-[#1E293B] text-white px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg group mt-2 sm:mt-0">
+                        <button onClick={handleSearch} className="w-full sm:w-auto flex-shrink-0 bg-[#0F172A] hover:bg-[#1E293B] text-white px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg group mt-2 sm:mt-0">
                             <span className="font-semibold text-lg">Search</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

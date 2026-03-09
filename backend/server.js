@@ -15,11 +15,13 @@ const pgRoutes = require('./routes/pgRoutes');
 const roomRoutes = require('./routes/roomRoutes');
 const availabilityRoutes = require('./routes/availabilityRoutes');
 const authRoutes = require('./routes/authRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 app.use('/api/pg', pgRoutes);
 app.use('/api/rooms', roomRoutes);
 app.use('/api/availability', availabilityRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI)
